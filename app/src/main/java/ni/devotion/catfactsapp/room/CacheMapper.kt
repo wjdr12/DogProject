@@ -1,6 +1,7 @@
 package ni.devotion.catfactsapp.room
 
 import ni.devotion.catfactsapp.model.Cat
+import ni.devotion.catfactsapp.retrofit.CatNetworkEntity
 import ni.devotion.catfactsapp.utils.EntityMapper
 import javax.inject.Inject
 
@@ -24,5 +25,9 @@ constructor():
             height = domainModel.height,
             width = domainModel.width
         )
+    }
+
+    fun mapFromEntityList(entities: List<CatCacheEntity>): List<Cat>{
+        return entities.map { mapFromEntity(it) }
     }
 }

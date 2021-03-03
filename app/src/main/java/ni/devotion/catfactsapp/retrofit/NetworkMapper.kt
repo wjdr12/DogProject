@@ -16,7 +16,6 @@ constructor(): EntityMapper<CatNetworkEntity, Cat> {
         )
     }
 
-
     override fun mapToEntity(domainModel: Cat): CatNetworkEntity {
         return CatNetworkEntity(
             id = domainModel.id,
@@ -24,5 +23,9 @@ constructor(): EntityMapper<CatNetworkEntity, Cat> {
             height = domainModel.height,
             width = domainModel.width
         )
+    }
+
+    fun mapFromEntityList(entities: List<CatNetworkEntity>): List<Cat>{
+        return entities.map { mapFromEntity(it) }
     }
 }
