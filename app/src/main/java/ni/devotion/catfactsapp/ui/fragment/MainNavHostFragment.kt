@@ -4,11 +4,12 @@ import android.content.Context
 import androidx.navigation.fragment.NavHostFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import ni.devotion.catfactsapp.ui.fragment.MainFragmentFactory
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
-class MainNavigationHostFragment: NavHostFragment() {
+class MainNavHostFragment: NavHostFragment() {
 
     @Inject
     lateinit var fragmentFactory: MainFragmentFactory
